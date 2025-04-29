@@ -95,7 +95,7 @@ export function App() {
 								referrerPolicy="no-referrer-when-downgrade"></iframe>
 
 							<div className="bg-white rounded-lg mt-8 p-8 space-y-4">
-								<h3 className="text-2xl font-extrabold text-[#e60000]">
+								<h3 className="text-[28px] font-extrabold text-[#e60000] text-center">
 									Endereço
 								</h3>
 								<div className="flex gap-2 items-center">
@@ -108,7 +108,7 @@ export function App() {
 									</p>
 								</div>
 
-								<div className="flex gap-2 items-center">
+								<div className="flex gap-4 items-center">
 									<img
 										src={clockIcon}
 										alt="Ícone de relógio"
@@ -118,7 +118,7 @@ export function App() {
 									</p>
 								</div>
 
-								<div className="flex gap-2 items-center">
+								<div className="flex gap-4 items-center">
 									<img
 										src={clockIcon}
 										alt="Ícone de relógio"
@@ -150,7 +150,7 @@ export function App() {
 								<a
 									href="https://wa.me/+5596981108122"
 									target="_blank"
-									rel="noopener noreferrer">
+									rel="noopener noreferrer" className="text-[#e60000] font-bold">
 									(96) 98110-8122
 								</a>
 							</div>
@@ -168,7 +168,7 @@ export function App() {
 								<a
 									href="https://www.facebook.com/share/1Fbmd8fwJg/?mibextid=wwXIfr"
 									target="_blank"
-									rel="noopener noreferrer">
+									rel="noopener noreferrer" className="text-[#e60000] font-bold">
 									Gohan Sushi
 								</a>
 							</div>
@@ -186,7 +186,7 @@ export function App() {
 								<a
 									href="https://www.instagram.com/gohansushi_ap?igsh=cGswNHN2aWd1ZzJz"
 									target="_blank"
-									rel="noopener noreferrer">
+									rel="noopener noreferrer" className="text-[#e60000] font-bold">
 									@gohan_sushi_ap
 								</a>
 							</div>
