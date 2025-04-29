@@ -8,21 +8,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import { Button } from "../ui/button";
 
 export const Carousel = () => {
 	return (
 		<>
 			<Swiper
-				navigation={true}
 				pagination={true}
 				effect={"fade"}
 				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
 				}}
-				modules={[Autoplay, Navigation, Pagination, EffectFade]}
+				modules={[Autoplay, Pagination, EffectFade]}
 				className="mySwiper absolute h-[calc(100vh-112px)] bg-black-50">
 				<SwiperSlide>
 					{" "}
