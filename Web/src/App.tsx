@@ -13,7 +13,7 @@ import { MenuCarousel } from "./Components/MenuCarousel";
 export function App() {
 	return (
 		<>
-			<header className="h-28 text-white bg-black/90 flex justify-between items-center px-10">
+			<header className="h-28 text-white bg-black/90 flex justify-between items-center px-10 fixed top-0 left-0 right-0 z-50">
 				<img
 					src={logoSushi}
 					alt="Logo Gohan Sushi"
@@ -150,7 +150,8 @@ export function App() {
 								<a
 									href="https://wa.me/+5596981108122"
 									target="_blank"
-									rel="noopener noreferrer" className="text-[#e60000] font-bold">
+									rel="noopener noreferrer"
+									className="text-[#e60000] font-bold">
 									(96) 98110-8122
 								</a>
 							</div>
@@ -168,7 +169,8 @@ export function App() {
 								<a
 									href="https://www.facebook.com/share/1Fbmd8fwJg/?mibextid=wwXIfr"
 									target="_blank"
-									rel="noopener noreferrer" className="text-[#e60000] font-bold">
+									rel="noopener noreferrer"
+									className="text-[#e60000] font-bold">
 									Gohan Sushi
 								</a>
 							</div>
@@ -186,7 +188,8 @@ export function App() {
 								<a
 									href="https://www.instagram.com/gohansushi_ap?igsh=cGswNHN2aWd1ZzJz"
 									target="_blank"
-									rel="noopener noreferrer" className="text-[#e60000] font-bold">
+									rel="noopener noreferrer"
+									className="text-[#e60000] font-bold">
 									@gohan_sushi_ap
 								</a>
 							</div>

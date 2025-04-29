@@ -56,7 +56,7 @@ export const Carousel = () => {
 					/>
 				</SwiperSlide>
 
-				<div className="relative bottom-96 text-center space-y-5 z-10 text-white">
+				<div className="relative bottom-3/5 text-center space-y-5 z-10 text-white">
 					<h1 className="text-4xl font-extrabold">
 						O Melhor Sushi do
 						<br /> Oiapoque!
