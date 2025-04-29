@@ -2,37 +2,27 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // import required modules
-import {
-	Autoplay,
-	Navigation,
-	Pagination,
-    EffectFade,
-} from "swiper/modules";
+import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { Button } from "../ui/button";
 
-export const Carousel = ()=>  {
+export const Carousel = () => {
 	return (
 		<>
 			<Swiper
 				navigation={true}
 				pagination={true}
-                effect={'fade'}
+				effect={"fade"}
 				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
 				}}
-				modules={[
-					Autoplay,
-					Navigation,
-					Pagination,
-                    EffectFade,
-				]}
+				modules={[Autoplay, Navigation, Pagination, EffectFade]}
 				className="mySwiper absolute h-[calc(100vh-112px)] bg-black-50">
 				<SwiperSlide>
 					{" "}
@@ -69,7 +59,8 @@ export const Carousel = ()=>  {
 
 				<div className="relative bottom-96 text-center space-y-5 z-10 text-white">
 					<h1 className="text-4xl font-extrabold">
-						O Melhor Sushi do<br /> Oiapoque!
+						O Melhor Sushi do
+						<br /> Oiapoque!
 					</h1>
 
 					<p>
@@ -77,11 +68,11 @@ export const Carousel = ()=>  {
 						do Oiapoque.
 					</p>
 
-					<Button className="rounded-2xl hover:bg-transparent hover:border-2 hover:border-[#e60c00] hover:text-[#e60c00] cursor-pointer">Conheça nosso Cardápio</Button>
+					<Button className="rounded-2xl hover:bg-transparent hover:border-2 hover:border-[#e60c00] hover:text-[#e60c00] cursor-pointer">
+						Conheça nosso Cardápio
+					</Button>
 				</div>
 			</Swiper>
-
-            
 		</>
 	);
-}
+};

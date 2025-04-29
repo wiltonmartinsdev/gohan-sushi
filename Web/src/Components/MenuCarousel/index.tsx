@@ -55,7 +55,6 @@ const menuItems = [
 		price: 36.9,
 		isPopular: false,
 	},
-    
 ];
 
 export const MenuCarousel = () => {
@@ -68,7 +67,7 @@ export const MenuCarousel = () => {
 				pagination={{
 					clickable: true,
 				}}
-                autoplay={{
+				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
 				}}

@@ -118,10 +118,45 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+/* Estilos personalizados para os componentes Swiper */
+
+.swiper-pagination-bullet {
+	background-color: #e60000;
+}
+
+/* Oculta as setas de navegação em dispositivos móveis */
+@media (max-width: 1023px) {
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none !important;
+	}
+}
+
+/* Em desktop, mostra as setas apenas no hover */
+@media (min-width: 1024px) {
+	.mySwiper {
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: none;
+		}
+	}
+
+	.mySwiper:hover {
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: block;
+
+			color: #e60000;
+
+			transition: all 0.3s ease-in-out;
+		}
 	}
 }
