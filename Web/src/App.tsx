@@ -1,11 +1,12 @@
 import clockIcon from "@/assets/clockIcon.svg";
 import facebookIcon from "@/assets/facebookIcon.svg";
+import instagramIcon from "@/assets/instagramIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
 import logoSushi from "@/assets/logo-sushi.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
-import instagramIcon from "@/assets/instagramIcon.svg";
 
 import { Carousel } from "./Components/Carousel";
+import { Footer } from "./Components/Footer";
 import { HamburgerMenu } from "./Components/HamburgerMenu";
 import { MenuCarousel } from "./Components/MenuCarousel";
 
@@ -147,7 +148,7 @@ export function App() {
 								</p>
 
 								<a
-									href="#"
+									href="https://wa.me/+5596981108122"
 									target="_blank"
 									rel="noopener noreferrer">
 									(96) 98110-8122
@@ -171,8 +172,8 @@ export function App() {
 									Gohan Sushi
 								</a>
 							</div>
-							
-                            <div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center">
+
+							<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center">
 								<img
 									src={instagramIcon}
 									alt=""
@@ -183,7 +184,7 @@ export function App() {
 								</p>
 
 								<a
-									href="https://www.facebook.com/share/1Fbmd8fwJg/?mibextid=wwXIfr"
+									href="https://www.instagram.com/gohansushi_ap?igsh=cGswNHN2aWd1ZzJz"
 									target="_blank"
 									rel="noopener noreferrer">
 									@gohan_sushi_ap
@@ -192,6 +193,8 @@ export function App() {
 						</div>
 					</section>
 				</div>
+
+				<Footer />
 			</main>
 		</>
 	);
