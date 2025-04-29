@@ -2,17 +2,17 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // import required modules
 import {
 	Autoplay,
 	Navigation,
 	Pagination,
-	Mousewheel,
-	Keyboard,
+    EffectFade,
 } from "swiper/modules";
 import { Button } from "../ui/button";
 
@@ -20,21 +20,18 @@ export const Carousel = ()=>  {
 	return (
 		<>
 			<Swiper
-				cssMode={true}
 				navigation={true}
 				pagination={true}
+                effect={'fade'}
 				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
 				}}
-				mousewheel={true}
-				keyboard={true}
 				modules={[
 					Autoplay,
 					Navigation,
 					Pagination,
-					Mousewheel,
-					Keyboard,
+                    EffectFade,
 				]}
 				className="mySwiper absolute h-[calc(100vh-112px)] bg-black-50">
 				<SwiperSlide>
@@ -83,6 +80,8 @@ export const Carousel = ()=>  {
 					<Button className="rounded-2xl hover:bg-transparent hover:border-2 hover:border-[#e60c00] hover:text-[#e60c00] cursor-pointer">Conheça nosso Cardápio</Button>
 				</div>
 			</Swiper>
+
+            
 		</>
 	);
 }
