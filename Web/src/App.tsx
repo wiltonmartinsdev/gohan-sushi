@@ -33,7 +33,9 @@ export function App() {
 			</header>
 
 			<main>
-				<Carousel />
+				<section id="home">
+					<Carousel />
+				</section>
 
 				<div className="px-8 py-14 space-y-14">
 					<section id="about">
