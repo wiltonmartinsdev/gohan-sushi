@@ -97,7 +97,7 @@ export function App() {
 								referrerPolicy="no-referrer-when-downgrade"></iframe>
 
 							<div className="bg-white rounded-lg mt-8 p-8 space-y-4">
-								<h3 className="text-[28px] font-extrabold text-[#e60000] text-center">
+								<h3 className="relative text-[28px] font-extrabold text-[#e60000] text-center mb-10 after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:transform after:-translate-x-1/2 after:w-14 after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 									Endereço
 								</h3>
 								<div className="flex gap-2 items-center">

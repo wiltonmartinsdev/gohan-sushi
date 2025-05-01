@@ -59,6 +59,7 @@ export const HamburgerMenu = () => {
 			<Hamburger
 				toggled={isOpen}
 				toggle={setIsOpen}
+                color="#e60000"
 			/>
 
 			<AnimatePresence>
