@@ -12,4 +12,8 @@ export default defineConfig({
 			"@": path.resolve(__dirname, "./src"),
 		},
 	},
+	server: {
+		host: "0.0.0.0", // Permite acesso de qualquer dispositivo na rede
+		port: 3000, // Porta fixa para facilitar a configuração
+	},
 });
