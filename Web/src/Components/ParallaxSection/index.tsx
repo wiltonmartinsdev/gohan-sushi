@@ -30,7 +30,7 @@ export function ParallaxSection({
 	const y = useTransform(
 		scrollYProgress,
 		[0, 1],
-		["-20%", `${parallaxSpeed * 100 - 20}%`]
+		["-26%", `${parallaxSpeed * 100 - 26}%`]
 	);
 
 	return (
