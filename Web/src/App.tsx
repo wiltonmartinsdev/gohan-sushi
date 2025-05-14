@@ -70,7 +70,7 @@ export function App() {
 					<ParallaxSection
 						id="about"
 						imageUrl={imageSushiAbout}
-						parallaxSpeed={0.3}>
+						>
 						<div className="px-8 py-14">
 							<h2 className="relative text-center text-3xl font-extrabold text-[#e60000] mb-14 after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-[70px] after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Sobre Nós
@@ -120,7 +120,7 @@ export function App() {
 					<ParallaxSection
 						id="location"
 						imageUrl={imageSushiLocation}
-						parallaxSpeed={0.5}>
+						>
 						<div className="px-8 py-14">
 							<h2 className="relative text-center text-3xl font-extrabold text-[#e60000] mb-14 after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-36 after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Nossa Localização
