@@ -22,7 +22,7 @@ export const Carousel = () => {
 					disableOnInteraction: false,
 				}}
 				modules={[Autoplay, Pagination, EffectFade]}
-				className="mySwiper absolute h-[calc(100vh-78px)] bg-black-50">
+				className="mySwiper absolute h-[calc(100vh-78px)] sm:h-screen bg-black-50">
 				<SwiperSlide>
 					{" "}
 					<img
