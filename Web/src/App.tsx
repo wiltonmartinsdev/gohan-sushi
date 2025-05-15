@@ -71,7 +71,7 @@ export function App() {
 						id="about"
 						imageUrl={imageSushiAbout}
 						>
-						<div className="px-8 py-14">
+						<div className="px-8 py-14 mx-auto sm:w-3/4 md:w-[70%]">
 							<h2 className="relative text-center text-3xl font-extrabold text-[#e60000] mb-14 after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-[70px] after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Sobre Nós
 							</h2>
@@ -98,7 +98,7 @@ export function App() {
 									gastronômica única que vai além do comum.
 								</p>
 
-								<p className="text-[#e60c00] font-extrabold w-[175px] border-l-[3px] border-l-[#e60000] pl-4">
+								<p className="text-[#e60c00] font-extrabold w-[175px] sm:w-auto border-l-[3px] border-l-[#e60000] pl-4">
 									"Descubra a felicidade em cada mordida! Quem
 									disse que felicidade não se compra nunca
 									experimentou nosso sushi."
