@@ -3,6 +3,7 @@ import facebookIcon from "@/assets/facebookIcon.svg";
 import instagramIcon from "@/assets/instagramIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
 import logoSushi from "@/assets/logo-sushi.png";
+import logoSushiMd from "@/assets/logo-sushi-md.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
 import imageSushiAbout from "@/assets/image-sushi-about.jpg";
 import imageSushiLocation from "@/assets/image-sushi-location.jpg";
@@ -76,15 +77,25 @@ export function App() {
 								Sobre Nós
 							</h2>
 
-							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12">
-								<div className="flex justify-center mb-8">
+							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8">
+								<div className="flex justify-center mb-8 w-full lg:w-[1200px]">
 									<img
 										src={logoSushi}
 										alt=""
+                                        className="lg:hidden"
+                                        loading="lazy"
+									/>
+
+									<img
+										src={logoSushiMd}
+										alt=""
+                                        className="hidden lg:flex"
+                                        loading="lazy"
 									/>
 								</div>
 
-								<p>
+								<div>
+                                    <p>
 									O Gohan Sushi traz para Oiapoque o
 									verdadeiro sabor da culinária japonesa com
 									um toque amazônico. Nosso empreendimento
@@ -103,6 +114,7 @@ export function App() {
 									disse que felicidade não se compra nunca
 									experimentou nosso sushi."
 								</p>
+                                </div>
 							</div>
 						</div>
 					</ParallaxSection>
