@@ -1,11 +1,11 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Divide as Hamburger } from "hamburger-react";
-import { useState, useEffect, useCallback } from "react";
 import {
 	scrollToSection as scrollUtil,
 	getHeaderHeight,
 	getSectionSpacing,
 } from "../../lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { Divide as Hamburger } from "hamburger-react";
+import { useState, useEffect, useCallback } from "react";
 
 export const HamburgerMenu = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +64,7 @@ export const HamburgerMenu = () => {
 	}, []);
 
 	return (
-		<>
+		<div className="lg:hidden">
 			<Hamburger
 				toggled={isOpen}
 				toggle={setIsOpen}
@@ -78,86 +78,88 @@ export const HamburgerMenu = () => {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -100 }}
 						className="absolute top-28 left-0 right-0 bg-black/90 text-white flex flex-col items-center rounded-b-2xl z-10">
-						<ul className="flex flex-col items-center gap-8 py-8">
-							<li>
-								<a
-									href="#home"
-									className={
-										activeSection === "home"
-											? "text-[#e60000]"
-											: ""
-									}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection("home");
-									}}>
-									Início
-								</a>
-							</li>
-							<li>
-								<a
-									href="#about"
-									className={
-										activeSection === "about"
-											? "text-[#e60000]"
-											: ""
-									}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection("about");
-									}}>
-									Sobre Nós
-								</a>
-							</li>
-							<li>
-								<a
-									href="#menu"
-									className={
-										activeSection === "menu"
-											? "text-[#e60000]"
-											: ""
-									}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection("menu");
-									}}>
-									Cardápio
-								</a>
-							</li>
-							<li>
-								<a
-									href="#location"
-									className={
-										activeSection === "location"
-											? "text-[#e60000]"
-											: ""
-									}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection("location");
-									}}>
-									Localização
-								</a>
-							</li>
-							<li>
-								<a
-									href="#contact"
-									className={
-										activeSection === "contact"
-											? "text-[#e60000]"
-											: ""
-									}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection("contact");
-									}}>
-									Contato
-								</a>
-							</li>
-						</ul>
+						<nav>
+							<ul className="flex flex-col items-center gap-8 py-8">
+								<li>
+									<a
+										href="#home"
+										className={
+											activeSection === "home"
+												? "text-[#e60000]"
+												: ""
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("home");
+										}}>
+										Início
+									</a>
+								</li>
+								<li>
+									<a
+										href="#about"
+										className={
+											activeSection === "about"
+												? "text-[#e60000]"
+												: ""
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("about");
+										}}>
+										Sobre Nós
+									</a>
+								</li>
+								<li>
+									<a
+										href="#menu"
+										className={
+											activeSection === "menu"
+												? "text-[#e60000]"
+												: ""
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("menu");
+										}}>
+										Cardápio
+									</a>
+								</li>
+								<li>
+									<a
+										href="#location"
+										className={
+											activeSection === "location"
+												? "text-[#e60000]"
+												: ""
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("location");
+										}}>
+										Localização
+									</a>
+								</li>
+								<li>
+									<a
+										href="#contact"
+										className={
+											activeSection === "contact"
+												? "text-[#e60000]"
+												: ""
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("contact");
+										}}>
+										Contato
+									</a>
+								</li>
+							</ul>
+						</nav>
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</>
+		</div>
 	);
 };

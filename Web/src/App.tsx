@@ -1,22 +1,48 @@
+import { useEffect, useState, useCallback } from "react";
+
 import clockIcon from "@/assets/clockIcon.svg";
 import facebookIcon from "@/assets/facebookIcon.svg";
+import imageSushiAbout from "@/assets/image-sushi-about.jpg";
+import imageSushiLocation from "@/assets/image-sushi-location.jpg";
 import instagramIcon from "@/assets/instagramIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
 import logoSushi from "@/assets/logo-sushi.png";
 import logoSushiMd from "@/assets/logo-sushi-md.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
-import imageSushiAbout from "@/assets/image-sushi-about.jpg";
-import imageSushiLocation from "@/assets/image-sushi-location.jpg";
 
 import { Carousel } from "./Components/Carousel";
 import { Footer } from "./Components/Footer";
 import { HamburgerMenu } from "./Components/HamburgerMenu";
 import { MenuCarousel } from "./Components/MenuCarousel";
 import { ParallaxSection } from "./Components/ParallaxSection";
-import { scrollToSection } from "./lib/utils";
-import { useEffect } from "react";
+import {
+	scrollToSection,
+	getHeaderHeight,
+	getSectionSpacing,
+} from "./lib/utils";
 
 export function App() {
+	const [activeSection, setActiveSection] = useState("home");
+	const [isNavigating, setIsNavigating] = useState(false);
+
+	// Função para navegação suave com atualização da seção ativa
+	const handleNavigate = useCallback(
+		(sectionId: string, e?: React.MouseEvent) => {
+			if (e) e.preventDefault();
+			// Atualiza imediatamente a seção ativa para evitar efeito flickering
+			setActiveSection(sectionId);
+			// Marca que estamos em processo de navegação
+			setIsNavigating(true);
+			scrollToSection(sectionId);
+
+			// Restaura o estado de navegação após a animação terminar
+			setTimeout(() => {
+				setIsNavigating(false);
+			}, 1000); // Um segundo é geralmente suficiente para a animação de rolagem
+		},
+		[]
+	);
+
 	// Ajuste para navegação direta por hash (por exemplo: #menu, #contact)
 	useEffect(() => {
 		const handleHashNavigation = () => {
@@ -41,6 +67,56 @@ export function App() {
 		};
 	}, []);
 
+	// Detectar seção ativa ao rolar a página
+	useEffect(() => {
+		const sections = ["home", "about", "menu", "location", "contact"];
+
+		const handleScroll = () => {
+			// Se estamos no meio de uma navegação por clique, não atualiza a seção ativa
+			if (isNavigating) return;
+
+			// Obtém dinamicamente a altura do header
+			const headerHeight = getHeaderHeight();
+
+			// Verificar qual seção está visível
+			for (const section of sections) {
+				const element = document.getElementById(section);
+				if (element) {
+					const { offsetTop, offsetHeight } = element;
+
+					// Adicionar uma tolerância específica baseada na seção
+					const defaultTolerance = 20;
+					const tolerance = getSectionSpacing(
+						section,
+						defaultTolerance
+					);
+
+					// Adiciona a altura do header e tolerância à posição de rolagem
+					const scrollPosition =
+						window.scrollY + headerHeight + tolerance;
+
+					if (
+						scrollPosition >= offsetTop &&
+						scrollPosition < offsetTop + offsetHeight
+					) {
+						setActiveSection(section);
+						break;
+					}
+				}
+			}
+		};
+
+		// Definir "home" como seção ativa inicial se estiver no topo da página
+		if (window.scrollY < 100) {
+			setActiveSection("home");
+		} else {
+			handleScroll();
+		}
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [isNavigating]);
+
 	return (
 		<>
 			<header className="h-28 text-white bg-black/90 flex justify-between items-center px-10 fixed top-0 left-0 right-0 z-50">
@@ -51,15 +127,70 @@ export function App() {
 
 				<HamburgerMenu />
 
-				{/* <nav>
-					<ul className="">
-						<li>Início</li>
-						<li>Sobre Nós</li>
-						<li>Cardápio</li>
-						<li>Localização</li>
-						<li>Contato</li>
+				<nav className="hidden lg:block">
+					<ul className="flex gap-8">
+						<li>
+							<a
+								href="#home"
+								className={
+									activeSection === "home"
+										? "text-[#e60000]"
+										: "hover:text-[#e60000]/80"
+								}
+								onClick={(e) => handleNavigate("home", e)}>
+								Início
+							</a>
+						</li>
+						<li>
+							<a
+								href="#about"
+								className={
+									activeSection === "about"
+										? "text-[#e60000]"
+										: "hover:text-[#e60000]/80"
+								}
+								onClick={(e) => handleNavigate("about", e)}>
+								Sobre Nós
+							</a>
+						</li>
+						<li>
+							<a
+								href="#menu"
+								className={
+									activeSection === "menu"
+										? "text-[#e60000]"
+										: "hover:text-[#e60000]/80"
+								}
+								onClick={(e) => handleNavigate("menu", e)}>
+								Cardápio
+							</a>
+						</li>
+						<li>
+							<a
+								href="#location"
+								className={
+									activeSection === "location"
+										? "text-[#e60000]"
+										: "hover:text-[#e60000]/80"
+								}
+								onClick={(e) => handleNavigate("location", e)}>
+								Localização
+							</a>
+						</li>
+						<li>
+							<a
+								href="#contact"
+								className={
+									activeSection === "contact"
+										? "text-[#e60000]"
+										: "hover:text-[#e60000]/80"
+								}
+								onClick={(e) => handleNavigate("contact", e)}>
+								Contato
+							</a>
+						</li>
 					</ul>
-				</nav> */}
+				</nav>
 			</header>
 
 			<main>
@@ -70,8 +201,7 @@ export function App() {
 				<div className="space-y-10">
 					<ParallaxSection
 						id="about"
-						imageUrl={imageSushiAbout}
-						>
+						imageUrl={imageSushiAbout}>
 						<div className="px-8 py-14 mx-auto sm:w-3/4 md:w-[70%]">
 							<h2 className="relative text-center text-3xl font-extrabold text-[#e60000] mb-14 after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-[70px] after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Sobre Nós
@@ -82,39 +212,41 @@ export function App() {
 									<img
 										src={logoSushi}
 										alt=""
-                                        className="lg:hidden"
-                                        loading="lazy"
+										className="lg:hidden"
+										loading="lazy"
 									/>
 
 									<img
 										src={logoSushiMd}
 										alt=""
-                                        className="hidden lg:flex"
-                                        loading="lazy"
+										className="hidden lg:flex"
+										loading="lazy"
 									/>
 								</div>
 
 								<div>
-                                    <p>
-									O Gohan Sushi traz para Oiapoque o
-									verdadeiro sabor da culinária japonesa com
-									um toque amazônico. Nosso empreendimento
-									combina técnicas tradicionais japonesas com
-									ingredientes frescos da região do Amapá.
-								</p>
+									<p>
+										O Gohan Sushi traz para Oiapoque o
+										verdadeiro sabor da culinária japonesa
+										com um toque amazônico. Nosso
+										empreendimento combina técnicas
+										tradicionais japonesas com ingredientes
+										frescos da região do Amapá.
+									</p>
 
-								<p className="mt-4 mb-4">
-									Aberto de terça a domingo, das 19:00 até
-									23:30, oferecemos uma experiência
-									gastronômica única que vai além do comum.
-								</p>
+									<p className="mt-4 mb-4">
+										Aberto de terça a domingo, das 19:00 até
+										23:30, oferecemos uma experiência
+										gastronômica única que vai além do
+										comum.
+									</p>
 
-								<p className="text-[#e60c00] font-extrabold w-[175px] sm:w-auto border-l-[3px] border-l-[#e60000] pl-4">
-									"Descubra a felicidade em cada mordida! Quem
-									disse que felicidade não se compra nunca
-									experimentou nosso sushi."
-								</p>
-                                </div>
+									<p className="text-[#e60c00] font-extrabold w-[175px] sm:w-auto border-l-[3px] border-l-[#e60000] pl-4">
+										"Descubra a felicidade em cada mordida!
+										Quem disse que felicidade não se compra
+										nunca experimentou nosso sushi."
+									</p>
+								</div>
 							</div>
 						</div>
 					</ParallaxSection>
@@ -131,8 +263,7 @@ export function App() {
 
 					<ParallaxSection
 						id="location"
-						imageUrl={imageSushiLocation}
-						>
+						imageUrl={imageSushiLocation}>
 						<div className="px-8 py-14">
 							<h2 className="relative text-center text-3xl font-extrabold text-[#e60000] mb-14 after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-36 after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Nossa Localização
