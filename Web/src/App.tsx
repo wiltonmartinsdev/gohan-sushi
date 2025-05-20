@@ -207,7 +207,7 @@ export function App() {
 								Sobre Nós
 							</h2>
 
-							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8">
+							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8 xl:items-center">
 								<div className="flex justify-center mb-8 w-full lg:w-[1200px]">
 									<img
 										src={logoSushi}
@@ -224,7 +224,7 @@ export function App() {
 									/>
 								</div>
 
-								<div>
+								<div className="xl:text-xl">
 									<p>
 										O Gohan Sushi traz para Oiapoque o
 										verdadeiro sabor da culinária japonesa
@@ -235,8 +235,8 @@ export function App() {
 									</p>
 
 									<p className="mt-4 mb-4">
-										Aberto de terça a domingo, das 19:00 até
-										23:30, oferecemos uma experiência
+										Aberto de terça a domingo, das 19h até
+										23h30, oferecemos uma experiência
 										gastronômica única que vai além do
 										comum.
 									</p>
@@ -269,7 +269,7 @@ export function App() {
 								Nossa Localização
 							</h2>
 
-							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8 lg:w-[910px] lg:h-[550px]">
+							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8 lg:w-[910px] lg:h-[550px] xl:w-[1160px] xl:mx-auto">
 								<iframe
 									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15923.44338967811!2d-51.83913424065305!3d3.8400343381398288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d6cc54253bb1367%3A0x8c2f602bd1cd2f75!2sOiapoque%2C%20AP%2C%2068980-000!5e0!3m2!1spt-BR!2sbr!4v1745845385526!5m2!1spt-BR!2sbr"
 									width="100%"
@@ -280,7 +280,7 @@ export function App() {
 									referrerPolicy="no-referrer-when-downgrade"></iframe>
 
 								<div>
-									<div className="bg-white rounded-lg mt-8 p-8 space-y-4 lg:mt-0 lg:h-full">
+									<div className="bg-white rounded-lg mt-8 p-8 space-y-4 lg:mt-0 lg:h-full xl:w-[395px]">
 										<h3 className="relative text-[28px] font-extrabold text-[#e60000] text-center mb-10 after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:transform after:-translate-x-1/2 after:w-14 after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 											Endereço
 										</h3>
@@ -311,7 +311,7 @@ export function App() {
 												alt="Ícone de relógio"
 											/>
 											<p className="text-lg">
-												Das 19h até às 23h:30
+												Das 19h até às 23h30
 											</p>
 										</div>
 									</div>
