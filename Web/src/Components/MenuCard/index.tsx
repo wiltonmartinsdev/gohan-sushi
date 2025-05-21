@@ -16,7 +16,7 @@ export const MenuCard = ({
 	isPopular = false,
 }: MenuCardProps) => {
 	return (
-		<div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+		<div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg  border border-gray-200 hover:scale-115 transition-transform duration-300">
 			<div className="relative">
 				<img
 					src={image}
