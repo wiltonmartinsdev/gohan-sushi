@@ -70,6 +70,7 @@ export const MenuCarousel = () => {
 				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
 				}}
 				breakpoints={{
 					640: {
