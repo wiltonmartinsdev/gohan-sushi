@@ -130,7 +130,7 @@ export function App() {
 				<nav className="hidden lg:block">
 					<ul className="flex gap-8">
 						<li>
-							<a
+							<span><a
 								href="#home"
 								className={
 									activeSection === "home"
@@ -139,10 +139,10 @@ export function App() {
 								}
 								onClick={(e) => handleNavigate("home", e)}>
 								Início
-							</a>
+							</a></span>
 						</li>
 						<li>
-							<a
+							<span><a
 								href="#about"
 								className={
 									activeSection === "about"
@@ -151,10 +151,10 @@ export function App() {
 								}
 								onClick={(e) => handleNavigate("about", e)}>
 								Sobre Nós
-							</a>
+							</a></span>
 						</li>
 						<li>
-							<a
+						<span>	<a
 								href="#menu"
 								className={
 									activeSection === "menu"
@@ -163,10 +163,10 @@ export function App() {
 								}
 								onClick={(e) => handleNavigate("menu", e)}>
 								Cardápio
-							</a>
+							</a></span>
 						</li>
 						<li>
-							<a
+						<span>	<a
 								href="#location"
 								className={
 									activeSection === "location"
@@ -175,10 +175,10 @@ export function App() {
 								}
 								onClick={(e) => handleNavigate("location", e)}>
 								Localização
-							</a>
+							</a></span>
 						</li>
 						<li>
-							<a
+							<span><a
 								href="#contact"
 								className={
 									activeSection === "contact"
@@ -187,7 +187,7 @@ export function App() {
 								}
 								onClick={(e) => handleNavigate("contact", e)}>
 								Contato
-							</a>
+							</a></span>
 						</li>
 					</ul>
 				</nav>
