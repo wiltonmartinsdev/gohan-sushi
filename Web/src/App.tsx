@@ -326,8 +326,8 @@ export function App() {
 								Entre em Contato
 							</h2>
 
-							<div className="bg-[#f5f3f2] rounded-lg px-10 py-12 space-y-8">
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-105 transition-transform duration-300">
+							<div className="bg-[#f5f3f2] rounded-lg px-10 py-12 space-y-8 xl:flex xl:justify-center xl:gap-14 xl:space-y-0">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={whatsAppIcon}
 										alt=""
@@ -346,7 +346,7 @@ export function App() {
 									</a>
 								</div>
 
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-105 transition-transform duration-300">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={facebookIcon}
 										alt=""
@@ -365,7 +365,7 @@ export function App() {
 									</a>
 								</div>
 
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:scale-105 transition-transform duration-300">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={instagramIcon}
 										alt=""
