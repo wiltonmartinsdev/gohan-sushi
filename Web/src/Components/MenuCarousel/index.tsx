@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { MenuCard } from "../MenuCard";
+import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 // Dados de exemplo para o cardápio
 const menuItems = [
@@ -58,6 +60,8 @@ const menuItems = [
 ];
 
 export const MenuCarousel = () => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<Swiper
@@ -70,7 +74,7 @@ export const MenuCarousel = () => {
 				autoplay={{
 					delay: 3000,
 					disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
+					pauseOnMouseEnter: true,
 				}}
 				breakpoints={{
 					640: {
@@ -98,6 +102,26 @@ export const MenuCarousel = () => {
 					</SwiperSlide>
 				))}
 			</Swiper>
+
+			<div className="flex justify-center mt-10 mb-5">
+				<Button
+					className="bg-[#e60000] hover:bg-[#e60000]/80 text-white px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer"
+					onClick={() => navigate("/menu/completo")}>
+					Ver Cardápio Completo
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round">
+						<path d="m9 18 6-6-6-6" />
+					</svg>
+				</Button>
+			</div>
 		</>
 	);
 };

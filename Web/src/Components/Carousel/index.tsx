@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import { Button } from "../ui/button";
+import { scrollToSection } from "@/lib/utils";
 
 export const Carousel = () => {
 	return (
@@ -67,7 +68,11 @@ export const Carousel = () => {
 						do Oiapoque.
 					</p>
 
-					<Button className="rounded-2xl hover:bg-transparent hover:border-2 hover:border-[#e60c00] hover:text-[#e60c00] cursor-pointer">
+					<Button
+						className="rounded-2xl hover:bg-transparent hover:border-2 hover:border-[#e60c00] hover:text-[#e60c00] cursor-pointer"
+						onClick={() => {
+							scrollToSection("menu");
+						}}>
 						Conheça nosso Cardápio
 					</Button>
 				</div>
