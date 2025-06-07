@@ -130,70 +130,86 @@ export function App() {
 				<nav className="hidden lg:block">
 					<ul className="flex gap-8">
 						<li>
-							<span><a
-								href="#home"
-								className={
-									activeSection === "home"
-										? "text-[#e60000]"
-										: "hover:text-[#e60000]/80"
-								}
-								onClick={(e) => handleNavigate("home", e)}>
-								Início
-							</a></span>
+							<span>
+								<a
+									href="#home"
+									className={
+										activeSection === "home"
+											? "text-[#e60000]"
+											: "hover:text-[#e60000]/80"
+									}
+									onClick={(e) => handleNavigate("home", e)}>
+									Início
+								</a>
+							</span>
 						</li>
 						<li>
-							<span><a
-								href="#about"
-								className={
-									activeSection === "about"
-										? "text-[#e60000]"
-										: "hover:text-[#e60000]/80"
-								}
-								onClick={(e) => handleNavigate("about", e)}>
-								Sobre Nós
-							</a></span>
+							<span>
+								<a
+									href="#about"
+									className={
+										activeSection === "about"
+											? "text-[#e60000]"
+											: "hover:text-[#e60000]/80"
+									}
+									onClick={(e) => handleNavigate("about", e)}>
+									Sobre Nós
+								</a>
+							</span>
 						</li>
 						<li>
-						<span>	<a
-								href="#menu"
-								className={
-									activeSection === "menu"
-										? "text-[#e60000]"
-										: "hover:text-[#e60000]/80"
-								}
-								onClick={(e) => handleNavigate("menu", e)}>
-								Cardápio
-							</a></span>
+							<span>
+								{" "}
+								<a
+									href="#menu"
+									className={
+										activeSection === "menu"
+											? "text-[#e60000]"
+											: "hover:text-[#e60000]/80"
+									}
+									onClick={(e) => handleNavigate("menu", e)}>
+									Cardápio
+								</a>
+							</span>
 						</li>
 						<li>
-						<span>	<a
-								href="#location"
-								className={
-									activeSection === "location"
-										? "text-[#e60000]"
-										: "hover:text-[#e60000]/80"
-								}
-								onClick={(e) => handleNavigate("location", e)}>
-								Localização
-							</a></span>
+							<span>
+								{" "}
+								<a
+									href="#location"
+									className={
+										activeSection === "location"
+											? "text-[#e60000]"
+											: "hover:text-[#e60000]/80"
+									}
+									onClick={(e) =>
+										handleNavigate("location", e)
+									}>
+									Localização
+								</a>
+							</span>
 						</li>
 						<li>
-							<span><a
-								href="#contact"
-								className={
-									activeSection === "contact"
-										? "text-[#e60000]"
-										: "hover:text-[#e60000]/80"
-								}
-								onClick={(e) => handleNavigate("contact", e)}>
-								Contato
-							</a></span>
+							<span>
+								<a
+									href="#contact"
+									className={
+										activeSection === "contact"
+											? "text-[#e60000]"
+											: "hover:text-[#e60000]/80"
+									}
+									onClick={(e) =>
+										handleNavigate("contact", e)
+									}>
+									Contato
+								</a>
+							</span>
 						</li>
 					</ul>
 				</nav>
 			</header>
 
-			<main>
+			<main className="relative">
 				<section id="home">
 					<Carousel />
 				</section>
