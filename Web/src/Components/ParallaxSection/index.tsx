@@ -6,7 +6,6 @@ interface ParallaxSectionProps {
 	imageUrl: string;
 	id: string;
 	parallaxSpeed?: number; // Velocidade do efeito (menor = mais lento)
-
 }
 
 export function ParallaxSection({
@@ -18,8 +17,8 @@ export function ParallaxSection({
 	// Referência para a seção atual
 	const sectionRef = useRef<HTMLElement>(null);
 
-	// Usando useScroll com a referência da seção específica
-	// offset ajustado para garantir que o efeito comece exatamente no topo da seção
+	// Usando useScroll sem container específico para usar o scroll da página
+	// O alerta foi resolvido com position: relative no CSS global
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
 		offset: ["start end", "end start"],
@@ -45,7 +44,7 @@ export function ParallaxSection({
 					y,
 					backgroundImage: `url(${imageUrl})`,
 					backgroundSize: "cover",
-					backgroundPosition: "top center", // Alterado para garantir alinhamento ao topo
+					backgroundPosition: "top center",
 					backgroundRepeat: "no-repeat",
 					zIndex: -1,
 				}}

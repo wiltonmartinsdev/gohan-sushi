@@ -2,11 +2,18 @@
 
 @import "tailwindcss";
 
-body {
-	font-family: Roboto, sans-serif;
+html {
+	position: relative;
 }
 
+body {
+	font-family: Roboto, sans-serif;
+	position: relative;
+}
 
+#root {
+	position: relative;
+}
 
 /* Estilos personalizados para os componentes Swiper */
 
@@ -44,37 +51,37 @@ body {
 }
 
 span {
-  position: relative;
+	position: relative;
 }
 
-span::before, span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #e60000;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
+span::before,
+span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-color: #e60000;
+	transform: scaleX(0);
+	transition: transform 0.5s ease;
 }
 
 span::before {
-  top: 0;
-  transform-origin: center right;
+	top: 0;
+	transform-origin: center right;
 }
 
 span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
+	transform-origin: center left;
+	transform: scaleX(1);
 }
 
 span::after {
-  bottom: 0;
-  transform-origin: center left;
+	bottom: 0;
+	transform-origin: center left;
 }
 
 span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
+	transform-origin: center right;
+	transform: scaleX(1);
 }
-
