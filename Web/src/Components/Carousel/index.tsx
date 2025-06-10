@@ -5,10 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import { Button } from "../ui/button";
 import { scrollToSection } from "@/lib/utils";
 
@@ -22,8 +21,8 @@ export const Carousel = () => {
 					delay: 3000,
 					disableOnInteraction: false,
 				}}
-				modules={[Autoplay, Pagination, EffectFade]}
-				className="mySwiper absolute h-[calc(100vh-78px)] sm:h-screen bg-black-50">
+				modules={[Autoplay, EffectFade]}
+				className="mySwiper absolute h-screen bg-black-50">
 				<SwiperSlide>
 					{" "}
 					<img
