@@ -35,10 +35,9 @@ export function App() {
 			setIsNavigating(true);
 			scrollToSection(sectionId);
 
-			// Restaura o estado de navegação após a animação terminar
 			setTimeout(() => {
 				setIsNavigating(false);
-			}, 1000); // Um segundo é geralmente suficiente para a animação de rolagem
+			}, 500);
 		},
 		[]
 	);
