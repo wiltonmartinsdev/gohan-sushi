@@ -1,7 +1,7 @@
 import {
 	scrollToSection,
 	getHeaderHeight,
-	getSectionSpacing,
+	getActiveSection,
 } from "./lib/utils";
 import { useEffect, useState, useCallback } from "react";
 
@@ -77,32 +77,14 @@ export function App() {
 			// Obtém dinamicamente a altura do header
 			const headerHeight = getHeaderHeight();
 
-			// Verificar qual seção está visível
-			for (const section of sections) {
-				const element = document.getElementById(section);
-				if (element) {
-					const { offsetTop, offsetHeight } = element;
-
-					// Adicionar uma tolerância específica baseada na seção
-					const defaultTolerance = 20;
-					const tolerance = getSectionSpacing(
-						section,
-						defaultTolerance
-					);
-
-					// Adiciona a altura do header e tolerância à posição de rolagem
-					const scrollPosition =
-						window.scrollY + headerHeight + tolerance;
-
-					if (
-						scrollPosition >= offsetTop &&
-						scrollPosition < offsetTop + offsetHeight
-					) {
-						setActiveSection(section);
-						break;
-					}
-				}
+			// Se estiver no topo da página, definir "home" como ativa
+			if (window.scrollY < 100) {
+				setActiveSection("home");
+				return;
 			}
+
+			const activeSection = getActiveSection(sections, headerHeight);
+			setActiveSection(activeSection);
 		};
 
 		// Definir "home" como seção ativa inicial se estiver no topo da página
