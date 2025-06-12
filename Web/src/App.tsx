@@ -37,7 +37,7 @@ export function App() {
 
 			setTimeout(() => {
 				setIsNavigating(false);
-			}, 500);
+			}, 200);
 		},
 		[]
 	);
