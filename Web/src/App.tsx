@@ -100,7 +100,7 @@ export function App() {
 
 	return (
 		<>
-			<header className="h-28 text-white bg-black/90 flex justify-between items-center px-10 fixed top-0 left-0 right-0 z-50">
+			<header className="h-28 text-white bg-black/90 flex justify-between lg:justify-around items-center px-10 fixed top-0 left-0 right-0 z-50">
 				<img
 					src={logoSushi}
 					alt="Logo Gohan Sushi"
