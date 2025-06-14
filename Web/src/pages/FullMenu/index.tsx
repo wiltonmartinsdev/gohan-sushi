@@ -144,7 +144,7 @@ export function FullMenu() {
 			<main>
 				<div className="pt-36 pb-14 px-8 bg-[#f5f3f2] min-h-screen">
 					<div className="container mx-auto">
-						<div className="flex flex-col items-center justify-between sm:gap-2 sm:justify-center mb-8">
+						<div className="flex flex-col items-center justify-between sm:gap-2 sm:justify-center mb-6">
 							<h2 className="relative text-center text-3xl font-extrabold mb-5 text-[#e60000] after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:transform after:-translate-x-1/2 after:w-32 after:h-[3px] after:bg-[#e60000] after:rounded-xl">
 								Cardápio Completo
 							</h2>
@@ -164,6 +164,19 @@ export function FullMenu() {
 							</div>
 						) : (
 							<>
+								<div className="flex justify-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="-2 -6 24 24">
+										<path
+											fill="#e60000"
+											d="M3.423 4.996h13.154L14.04 2.46a1 1 0 1 1 1.415-1.414l4.242 4.243a1 1 0 0 1 0 1.414l-4.242 4.242a1 1 0 0 1-1.415-1.414l2.536-2.535H3.423L5.96 9.53a1 1 0 1 1-1.415 1.414L.302 6.703a.997.997 0 0 1 0-1.414l4.242-4.243A1 1 0 1 1 5.96 2.46z"
+										/>
+									</svg>
+								</div>
+
 								{/* Filtros por categoria */}
 								<div className="mb-8 overflow-x-auto">
 									<div className="flex gap-3 pb-3">
