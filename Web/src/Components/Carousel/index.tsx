@@ -75,6 +75,15 @@ export const Carousel = () => {
 						Conheça nosso Cardápio
 					</Button>
 				</div>
+
+				{/* Scroll Indicator */}
+				<div className="absolute bottom-24 xl:bottom-16 left-1/2 transform -translate-x-1/2 text-white opacity-60 z-10">
+					<div className="animate-bounce">
+						<div className="w-6 h-10 border-2 border-[#e60c00] rounded-full flex justify-center">
+							<div className="w-1 h-3 bg-[#e60c00] rounded-full mt-2 animate-pulse"></div>
+						</div>
+					</div>
+				</div>
 			</Swiper>
 		</>
 	);
