@@ -324,59 +324,59 @@ export function App() {
 							</h2>
 
 							<div className="bg-[#f5f3f2] rounded-lg px-10 py-12 space-y-8 xl:flex xl:justify-center xl:gap-14 xl:space-y-0">
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center text-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={whatsAppIcon}
-										alt=""
+										alt="Ícone do WhatsApp"
 									/>
 
-									<p className="font-extrabold text-xl">
-										Delivery
-									</p>
+									<h3 className="font-extrabold text-xl">
+										Delivery pelo WhatsApp:
+									</h3>
 
 									<a
 										href="https://wa.me/+5596981108122"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-[#e60000] font-bold">
+										className="text-[#e60000] font-bold transition-all hover:underline">
 										(96) 98110-8122
 									</a>
 								</div>
 
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center text-center shadow-md hover:border-2 hover:border-[#e60000] hover:border-sm hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={facebookIcon}
-										alt=""
+										alt="Ícone do Facebook"
 									/>
 
-									<p className="font-extrabold text-xl">
-										Facebook
-									</p>
+									<h3 className="font-extrabold text-xl">
+										Siga-nos no Facebook:
+									</h3>
 
 									<a
 										href="https://www.facebook.com/share/1Fbmd8fwJg/?mibextid=wwXIfr"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-[#e60000] font-bold">
+										className="text-[#e60000] font-bold transition-all hover:underline">
 										Gohan Sushi
 									</a>
 								</div>
 
-								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center shadow-md hover:border-2 hover:border-[#e60000] hover:scale-125 transition-transform duration-300 xl:w-64">
+								<div className="bg-white rounded-lg p-8 space-y-4 flex flex-col items-center text-center shadow-md hover:border-2 hover:border-[#e60000] hover:scale-125 transition-transform duration-300 xl:w-64">
 									<img
 										src={instagramIcon}
-										alt=""
+										alt="Ícone do Instagram"
 									/>
 
-									<p className="font-extrabold text-xl">
-										Instagram
-									</p>
+									<h3 className="font-extrabold text-xl">
+										Siga-nos no Instagram:
+									</h3>
 
 									<a
 										href="https://www.instagram.com/gohansushi_ap?igsh=cGswNHN2aWd1ZzJz"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-[#e60000] font-bold">
+										className="text-[#e60000] font-bold transition-all hover:underline">
 										@gohan_sushi_ap
 									</a>
 								</div>
