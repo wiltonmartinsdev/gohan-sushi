@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { MenuCard } from "@/Components/MenuCard";
@@ -96,11 +96,21 @@ export function FullMenu() {
 	const [activeCategory, setActiveCategory] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isChangingCategory, setIsChangingCategory] = useState(false);
+	const [showSvgIcon, setShowSvgIcon] = useState(false);
+	const filterContainerRef = useRef<HTMLDivElement>(null);
 
 	// Filtrar itens pela categoria selecionada
 	const filteredItems = activeCategory
 		? fullMenuItems.filter((item) => item.category === activeCategory)
 		: fullMenuItems;
+
+	// Função para verificar se há overflow horizontal no container de filtros
+	const checkForOverflow = () => {
+		if (filterContainerRef.current) {
+			const { scrollWidth, clientWidth } = filterContainerRef.current;
+			setShowSvgIcon(scrollWidth > clientWidth);
+		}
+	};
 
 	// Função para mudar categoria com efeito de carregamento
 	const handleCategoryChange = (category: string | null) => {
@@ -124,6 +134,30 @@ export function FullMenu() {
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	// Monitorar redimensionamento e overflow das categorias
+	useEffect(() => {
+		// Verificar overflow inicial após o carregamento
+		const initialCheck = () => {
+			if (!isLoading) {
+				checkForOverflow();
+			}
+		};
+
+		// Verificar sempre que a janela for redimensionada
+		const handleResize = () => {
+			checkForOverflow();
+		};
+
+		// Adicionar event listeners
+		initialCheck();
+		window.addEventListener("resize", handleResize);
+
+		// Limpar event listeners
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [isLoading]);
 
 	return (
 		<>
@@ -164,22 +198,27 @@ export function FullMenu() {
 							</div>
 						) : (
 							<>
-								<div className="flex justify-center">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="24"
-										height="24"
-										viewBox="-2 -6 24 24">
-										<path
-											fill="#e60000"
-											d="M3.423 4.996h13.154L14.04 2.46a1 1 0 1 1 1.415-1.414l4.242 4.243a1 1 0 0 1 0 1.414l-4.242 4.242a1 1 0 0 1-1.415-1.414l2.536-2.535H3.423L5.96 9.53a1 1 0 1 1-1.415 1.414L.302 6.703a.997.997 0 0 1 0-1.414l4.242-4.243A1 1 0 1 1 5.96 2.46z"
-										/>
-									</svg>
-								</div>
+								{showSvgIcon && (
+									<div className="flex justify-center mb-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="24"
+											height="24"
+											viewBox="-2 -6 24 24"
+											className="animate-pulse">
+											<path
+												fill="#e60000"
+												d="M3.423 4.996h13.154L14.04 2.46a1 1 0 1 1 1.415-1.414l4.242 4.243a1 1 0 0 1 0 1.414l-4.242 4.242a1 1 0 0 1-1.415-1.414l2.536-2.535H3.423L5.96 9.53a1 1 0 1 1-1.415 1.414L.302 6.703a.997.997 0 0 1 0-1.414l4.242-4.243A1 1 0 1 1 5.96 2.46z"
+											/>
+										</svg>
+									</div>
+								)}
 
 								{/* Filtros por categoria */}
 								<div className="mb-8 overflow-x-auto">
-									<div className="flex gap-3 pb-3">
+									<div
+										ref={filterContainerRef}
+										className="flex gap-3 pb-3">
 										<Button
 											variant="ghost"
 											className={`border-2 ${
