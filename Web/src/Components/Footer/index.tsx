@@ -20,7 +20,8 @@ export const Footer = () => {
 				<a
 					href="https://wa.me/+5596981108122"
 					target="_blank"
-					rel="noopener noreferrer">
+					rel="noopener noreferrer"
+					aria-label="WhatsApp">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="40"
@@ -41,7 +42,8 @@ export const Footer = () => {
 				<a
 					href="https://www.facebook.com/share/1Fbmd8fwJg/?mibextid=wwXIfr"
 					target="_blank"
-					rel="noopener noreferrer">
+					rel="noopener noreferrer"
+					aria-label="Facebook">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"
@@ -57,7 +59,8 @@ export const Footer = () => {
 				<a
 					href="https://www.instagram.com/gohansushi_ap?igsh=cGswNHN2aWd1ZzJz"
 					target="_blank"
-					rel="noopener noreferrer">
+					rel="noopener noreferrer"
+					aria-label="Instagram">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="38"
