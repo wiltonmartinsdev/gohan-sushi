@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { MenuCard } from "@/Components/MenuCard";
 import { Button } from "@/Components/ui/button";
 import { Footer } from "@/Components/Footer";
-import logoSushi from "@/assets/logo-sushi.png";
+import { Header, BackButton } from "@/Components/Header";
 
 // Dados do cardápio completo
 const fullMenuItems = [
@@ -92,7 +91,6 @@ const fullMenuItems = [
 const categories = [...new Set(fullMenuItems.map((item) => item.category))];
 
 export function FullMenu() {
-	const navigate = useNavigate();
 	const [activeCategory, setActiveCategory] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isChangingCategory, setIsChangingCategory] = useState(false);
@@ -161,19 +159,9 @@ export function FullMenu() {
 
 	return (
 		<>
-			<header className="h-28 text-white bg-black/90 flex justify-between items-center px-10 fixed top-0 left-0 right-0 z-50">
-				<img
-					src={logoSushi}
-					alt="Logo Gohan Sushi"
-				/>
-
-				<Button
-					onClick={() => navigate("/")}
-					variant="outline"
-					className="border-[#e60000] text-white hover:bg-[#e60000] hover:text-white cursor-pointer">
-					Voltar ao Início
-				</Button>
-			</header>
+			<Header>
+				<BackButton />
+			</Header>
 
 			<main>
 				<div className="pt-36 pb-14 px-8 bg-[#f5f3f2] min-h-screen">

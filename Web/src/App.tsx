@@ -1,9 +1,4 @@
-import {
-	scrollToSection,
-	getHeaderHeight,
-	getActiveSection,
-} from "./lib/utils";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect } from "react";
 
 import clockIcon from "@/assets/clockIcon.svg";
 import facebookIcon from "@/assets/facebookIcon.svg";
@@ -11,37 +6,17 @@ import imageSushiAbout from "@/assets/image-sushi-about.jpg";
 import imageSushiLocation from "@/assets/image-sushi-location.jpg";
 import instagramIcon from "@/assets/instagramIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
-import logoSushi from "@/assets/logo-sushi.png";
 import logoSushiMd from "@/assets/logo-sushi-md.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
 
 import { Carousel } from "./Components/Carousel";
 import { Footer } from "./Components/Footer";
 import { HamburgerMenu } from "./Components/HamburgerMenu";
+import { Header, MainNavigation } from "./Components/Header";
 import { MenuCarousel } from "./Components/MenuCarousel";
 import { ParallaxSection } from "./Components/ParallaxSection";
 
 export function App() {
-	const [activeSection, setActiveSection] = useState("home");
-	const [isNavigating, setIsNavigating] = useState(false);
-
-	// Função para navegação suave com atualização da seção ativa
-	const handleNavigate = useCallback(
-		(sectionId: string, e?: React.MouseEvent) => {
-			if (e) e.preventDefault();
-			// Atualiza imediatamente a seção ativa para evitar efeito flickering
-			setActiveSection(sectionId);
-			// Marca que estamos em processo de navegação
-			setIsNavigating(true);
-			scrollToSection(sectionId);
-
-			setTimeout(() => {
-				setIsNavigating(false);
-			}, 200);
-		},
-		[]
-	);
-
 	// Ajuste para navegação direta por hash (por exemplo: #menu, #contact)
 	useEffect(() => {
 		const handleHashNavigation = () => {
@@ -49,7 +24,10 @@ export function App() {
 				// Esperar um momento para garantir que a página carregou completamente
 				setTimeout(() => {
 					const sectionId = window.location.hash.substring(1); // Remove o # do hash
-					scrollToSection(sectionId);
+					const element = document.getElementById(sectionId);
+					if (element) {
+						element.scrollIntoView({ behavior: "smooth" });
+					}
 				}, 300);
 			}
 		};
@@ -66,129 +44,12 @@ export function App() {
 		};
 	}, []);
 
-	// Detectar seção ativa ao rolar a página
-	useEffect(() => {
-		const sections = ["home", "about", "menu", "location", "contact"];
-
-		const handleScroll = () => {
-			// Se estamos no meio de uma navegação por clique, não atualiza a seção ativa
-			if (isNavigating) return;
-
-			// Obtém dinamicamente a altura do header
-			const headerHeight = getHeaderHeight();
-
-			// Se estiver no topo da página, definir "home" como ativa
-			if (window.scrollY < 100) {
-				setActiveSection("home");
-				return;
-			}
-
-			const activeSection = getActiveSection(sections, headerHeight);
-			setActiveSection(activeSection);
-		};
-
-		// Definir "home" como seção ativa inicial se estiver no topo da página
-		if (window.scrollY < 100) {
-			setActiveSection("home");
-		} else {
-			handleScroll();
-		}
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [isNavigating]);
-
 	return (
 		<>
-			<header className="h-28 text-white bg-black/90 flex justify-between lg:justify-around items-center px-10 fixed top-0 left-0 right-0 z-50">
-				<img
-					src={logoSushi}
-					alt="Logo Gohan Sushi"
-				/>
-
+			<Header className="lg:justify-around">
 				<HamburgerMenu />
-
-				<nav className="hidden lg:block">
-					<ul className="flex gap-8">
-						<li>
-							<span>
-								<a
-									href="#home"
-									className={
-										activeSection === "home"
-											? "text-[#e60000]"
-											: "hover:text-[#e60000]/80"
-									}
-									onClick={(e) => handleNavigate("home", e)}>
-									Início
-								</a>
-							</span>
-						</li>
-						<li>
-							<span>
-								<a
-									href="#about"
-									className={
-										activeSection === "about"
-											? "text-[#e60000]"
-											: "hover:text-[#e60000]/80"
-									}
-									onClick={(e) => handleNavigate("about", e)}>
-									Sobre Nós
-								</a>
-							</span>
-						</li>
-						<li>
-							<span>
-								{" "}
-								<a
-									href="#menu"
-									className={
-										activeSection === "menu"
-											? "text-[#e60000]"
-											: "hover:text-[#e60000]/80"
-									}
-									onClick={(e) => handleNavigate("menu", e)}>
-									Cardápio
-								</a>
-							</span>
-						</li>
-						<li>
-							<span>
-								{" "}
-								<a
-									href="#location"
-									className={
-										activeSection === "location"
-											? "text-[#e60000]"
-											: "hover:text-[#e60000]/80"
-									}
-									onClick={(e) =>
-										handleNavigate("location", e)
-									}>
-									Localização
-								</a>
-							</span>
-						</li>
-						<li>
-							<span>
-								<a
-									href="#contact"
-									className={
-										activeSection === "contact"
-											? "text-[#e60000]"
-											: "hover:text-[#e60000]/80"
-									}
-									onClick={(e) =>
-										handleNavigate("contact", e)
-									}>
-									Contato
-								</a>
-							</span>
-						</li>
-					</ul>
-				</nav>
-			</header>
+				<MainNavigation />
+			</Header>
 
 			<main className="relative">
 				<section id="home">
@@ -207,7 +68,7 @@ export function App() {
 							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8 xl:items-center">
 								<div className="flex justify-center mb-8 w-full lg:w-[1200px]">
 									<img
-										src={logoSushi}
+										src="/src/assets/logo-sushi.png"
 										alt=""
 										className="lg:hidden"
 										loading="lazy"
