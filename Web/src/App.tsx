@@ -6,7 +6,8 @@ import imageSushiAbout from "@/assets/image-sushi-about.jpg";
 import imageSushiLocation from "@/assets/image-sushi-location.jpg";
 import instagramIcon from "@/assets/instagramIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
-import logoSushiMd from "@/assets/logo-sushi-md.png";
+import logoSushiBlackSm from "@/assets/logo-sushi-black-sm.png";
+import logoSushiBlackMd from "@/assets/logo-sushi-black-md.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
 
 import { Carousel } from "./Components/Carousel";
@@ -68,15 +69,15 @@ export function App() {
 							<div className="bg-[#f5f3f2]/90 backdrop-blur-sm rounded-lg px-10 py-12 lg:flex lg:gap-8 xl:items-center">
 								<div className="flex justify-center mb-8 w-full lg:w-[1200px]">
 									<img
-										src="/src/assets/logo-sushi.png"
-										alt=""
+										src={logoSushiBlackSm}
+										alt="Logo Gohan Sushi Pequena"
 										className="lg:hidden"
 										loading="lazy"
 									/>
 
 									<img
-										src={logoSushiMd}
-										alt=""
+										src={logoSushiBlackMd}
+										alt="Logo Gohan Sushi Média"
 										className="hidden lg:flex"
 										loading="lazy"
 									/>

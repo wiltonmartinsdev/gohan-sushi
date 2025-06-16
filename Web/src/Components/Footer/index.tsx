@@ -1,14 +1,14 @@
 import facebookIcon from "@/assets/facebookIcon.svg";
 import instagramIcon from "@/assets/instagramIcon.svg";
-import logoSushi from "@/assets/logo-sushi.png";
+import logoSushiWhiteSm from "@/assets/logo-sushi-white-sm.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
 
 export const Footer = () => {
 	return (
 		<div className="bg-black flex flex-col items-center py-12 space-y-6">
 			<img
-				src={logoSushi}
-				alt=""
+				src={logoSushiWhiteSm}
+				alt="Logo Gohan Sushi Pequena"
 			/>
 
 			<div className="flex flex-col items-center">
