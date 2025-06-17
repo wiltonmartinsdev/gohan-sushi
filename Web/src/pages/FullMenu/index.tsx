@@ -4,6 +4,8 @@ import { MenuCard } from "@/Components/MenuCard";
 import { Button } from "@/Components/ui/button";
 import { Footer } from "@/Components/Footer";
 import { Header, BackButton } from "@/Components/Header";
+import hotRollImg from "@/assets/hot-roll.png";
+import salmonTemakiImg from "@/assets/salmon-temaki.png";
 
 // Dados do cardápio completo
 const fullMenuItems = [
@@ -47,7 +49,7 @@ const fullMenuItems = [
 	},
 	{
 		id: 5,
-		image: "https://images.unsplash.com/photo-1635012529371-352600ce6d3f?q=80&w=1974&auto=format&fit=crop",
+		image: hotRollImg,
 		title: "Hot Roll",
 		description:
 			"10 peças de hot roll com recheio de salmão e cream cheese.",
@@ -77,7 +79,7 @@ const fullMenuItems = [
 	},
 	{
 		id: 8,
-		image: "https://images.unsplash.com/photo-1633478062482-979fb7749915?q=80&w=2070&auto=format&fit=crop",
+		image: salmonTemakiImg,
 		title: "Temaki Salmão",
 		description:
 			"Temaki recheado com salmão fresco, cream cheese e cebolinha.",

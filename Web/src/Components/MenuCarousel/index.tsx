@@ -12,6 +12,9 @@ import { MenuCard } from "../MenuCard";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 
+import hotRollImg from "@/assets/hot-roll.png";
+import salmonTemakiImg from "@/assets/salmon-temaki.png";
+
 // Dados de exemplo para o cardápio
 const menuItems = [
 	{
@@ -41,7 +44,7 @@ const menuItems = [
 	},
 	{
 		id: 4,
-		image: "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=2025&auto=format&fit=crop",
+		image: salmonTemakiImg,
 		title: "Temaki Camarão",
 		description:
 			"Temaki recheado com camarão empanado, cream cheese e alface.",
@@ -50,7 +53,7 @@ const menuItems = [
 	},
 	{
 		id: 5,
-		image: "https://images.unsplash.com/photo-1635012529371-352600ce6d3f?q=80&w=1974&auto=format&fit=crop",
+		image: hotRollImg,
 		title: "Hot Roll",
 		description:
 			"10 peças de hot roll com recheio de salmão e cream cheese.",
