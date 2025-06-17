@@ -11,15 +11,7 @@ export const Footer = () => {
 				alt="Logo Gohan Sushi Pequena"
 			/>
 
-			<div className="flex flex-col items-center">
-				<p className="text-white">Copyright &copy; 2025</p>
-
-				<p className="text-white">Todos os direitos reservados</p>
-
-				<p className="text-white"> Oiapoque - Amapá - Brasil</p>
-			</div>
-
-			<div className="flex gap-4 items-center">
+            			<div className="flex gap-4 items-center">
 				<a
 					href="https://wa.me/+5596981108122"
 					target="_blank"
@@ -59,6 +51,16 @@ export const Footer = () => {
 					/>
 				</a>
 			</div>
+
+			<div className="flex flex-col items-center">
+				<p className="text-white">Copyright &copy; 2025</p>
+
+				<p className="text-white">Todos os direitos reservados</p>
+
+				<p className="text-white"> Oiapoque - Amapá - Brasil</p>
+			</div>
+
+
 
 			<a
 				href="https://devwiltonmartins.vercel.app/"
