@@ -9,9 +9,10 @@ export const Footer = () => {
 			<img
 				src={logoSushiWhiteSm}
 				alt="Logo Gohan Sushi Pequena"
+                className="mr-3"
 			/>
 
-            			<div className="flex gap-4 items-center">
+			<div className="flex gap-4 items-center">
 				<a
 					href="https://wa.me/+5596981108122"
 					target="_blank"
@@ -59,8 +60,6 @@ export const Footer = () => {
 
 				<p className="text-white"> Oiapoque - Amapá - Brasil</p>
 			</div>
-
-
 
 			<a
 				href="https://devwiltonmartins.vercel.app/"
