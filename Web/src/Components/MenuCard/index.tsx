@@ -38,8 +38,14 @@ export const MenuCard = ({
 					<span className="text-[#e60000] font-bold text-lg">
 						R$ {price.toFixed(2)}
 					</span>
+
 					<Button className="bg-black hover:bg-[#e60000] text-white px-3 py-1 rounded-md text-sm transition-colors duration-300 cursor-pointer">
-						Pedir
+						<a
+							href="https://wa.me/+5596981108122"
+							target="_blank"
+							rel="noopener noreferrer">
+							Pedir
+						</a>
 					</Button>
 				</div>
 			</div>
