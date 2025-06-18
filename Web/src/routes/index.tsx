@@ -11,7 +11,7 @@ export const Routes = () => {
 				element={<App />}
 			/>
 			<Route
-				path="/menu/completo"
+				path="/full-menu"
 				element={<FullMenu />}
 			/>
 		</RouterRoutes>

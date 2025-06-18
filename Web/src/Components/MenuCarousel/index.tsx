@@ -109,7 +109,7 @@ export const MenuCarousel = () => {
 			<div className="flex justify-center mt-10 mb-5">
 				<Button
 					className="bg-[#e60000] hover:bg-[#e60000]/80 text-white px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer"
-					onClick={() => navigate("/menu/completo")}>
+					onClick={() => navigate("/full-menu")}>
 					Ver Cardápio Completo
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
