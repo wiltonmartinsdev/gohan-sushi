@@ -17,7 +17,7 @@ export const MenuCard = ({
 }: MenuCardProps) => {
 	// Função para gerar link do WhatsApp com os detalhes do sushi
 	const generateWhatsAppLink = () => {
-		const phoneNumber = "+5591982504940"; // Número atual do estabelecimento
+		const phoneNumber = "+5596981108122"; // Número atual do estabelecimento
 
 		// Formata a mensagem com os dados do produto
 		const message = encodeURIComponent(
