@@ -10,12 +10,12 @@ import logoSushiBlackSm from "@/assets/logo-sushi-black-sm.png";
 import logoSushiBlackMd from "@/assets/logo-sushi-black-md.png";
 import whatsAppIcon from "@/assets/whatsappIcon.svg";
 
-import { Carousel } from "./Components/Carousel";
-import { Footer } from "./Components/Footer";
-import { HamburgerMenu } from "./Components/HamburgerMenu";
-import { Header, MainNavigation } from "./Components/Header";
-import { MenuCarousel } from "./Components/MenuCarousel";
-import { ParallaxSection } from "./Components/ParallaxSection";
+import { Carousel } from "./components/Carousel";
+import { Footer } from "./components/Footer";
+import { HamburgerMenu } from "./components/HamburgerMenu";
+import { Header, MainNavigation } from "./components/Header";
+import { MenuCarousel } from "./components/MenuCarousel";
+import { ParallaxSection } from "./components/ParallaxSection";
 
 export function App() {
 	// Ajuste para navegação direta por hash (por exemplo: #menu, #contact)

@@ -61,13 +61,13 @@ export const Footer = () => {
 				<p className="text-white"> Oiapoque - Amapá - Brasil</p>
 			</div>
 
-			<a
+			{/* <a
 				href="https://devwiltonmartins.vercel.app/"
 				target="_blank"
 				rel="noopener noreferrer"
 				className="text-white hover:text-[#e60000]">
 				Desenvolvido pelo dev: Wilton Lira Martins
-			</a>
+			</a> */}
 		</div>
 	);
 };
