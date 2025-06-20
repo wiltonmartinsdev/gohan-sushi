@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 
-import { MenuCard } from "@/components/MenuCard";
-import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/Footer";
-import { Header, BackButton } from "@/components/Header";
+import { MenuCard } from "@/Components/MenuCard";
+import { Button } from "@/Components/ui/button";
+import { Footer } from "@/Components/Footer";
+import { Header, BackButton } from "@/Components/Header";
 import hotRollImg from "@/assets/hot-roll.png";
 import salmonTemakiImg from "@/assets/salmon-temaki.png";
 
