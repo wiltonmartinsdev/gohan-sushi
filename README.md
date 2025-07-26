@@ -67,7 +67,6 @@ Após esse comando, o servidor de desenvolvimento será iniciado e estará dispo
 -   **Local**: `http://localhost:3000`
 -   **Rede**: `http://[seu-ip]:3000` (acessível por outros dispositivos na mesma rede)
 
-
 ## ✨ Funcionalidades
 
 ### 🏠 Página Principal
@@ -122,10 +121,9 @@ Após esse comando, o servidor de desenvolvimento será iniciado e estará dispo
 
 ## 📊 Status do Projeto
 
-- 🟢 **Front-end**: Completo e production-ready
-- 🟡 **Back-end**: Em desenvolvimento futuro
-- 🚀 O projeto está aberto para melhorias e novas funcionalidades podem ser adicionadas no futuro.
-
+-   🟢 **Front-end**: Completo e production-ready
+-   🟡 **Back-end**: Em desenvolvimento futuro
+-   🚀 O projeto está aberto para melhorias e novas funcionalidades podem ser adicionadas no futuro.
 
 ## 📄 Licença
 
@@ -133,16 +131,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
-
-
-<div align="center">
-  <p><strong>"Descubra a felicidade em cada mordida! Quem disse que felicidade não se compra nunca experimentou nosso sushi."</strong></p>
-  
-  <p>Desenvolvido com ❤️ pelo dev: <strong><a
-				href="https://devwiltonmartins.vercel.app/"
-				target="_blank"
-				rel="noopener noreferrer">Wilton Lira Martins
-			</a></strong></p>
-  
-  <p>⭐ Se você gostou do projeto, não esqueça de dar uma estrela!</p>
-</div>
+  <p> Se você gostou do projeto, não esqueça de dar uma estrela! ⭐</p>
