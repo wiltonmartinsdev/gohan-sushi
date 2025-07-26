@@ -67,6 +67,16 @@ Após esse comando, o servidor de desenvolvimento será iniciado e estará dispo
 -   **Local**: `http://localhost:3000`
 -   **Rede**: `http://[seu-ip]:3000` (acessível por outros dispositivos na mesma rede)
 
+## 🎬 Veja em Ação
+
+<p align="center">
+  <img src="./Web/src/assets/gohan-sushi-demo.gif" alt="Demonstração do Gohan Sushi" width="600"/>
+</p>
+
+<p align="center">
+  <i>Demonstração das principais funcionalidades do Gohan sushi</i>
+</p>
+
 ## ✨ Funcionalidades
 
 ### 🏠 Página Principal
